@@ -1,7 +1,7 @@
-summary: Set up Testing Harness
-added:
-  - Testable protocol
-  - TestableExecutable protocol
+summary: gitlab-ci clean up
+
+
+added: []
 changed: []
 deprecated: []
 removed: []
