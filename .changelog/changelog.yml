@@ -1,0 +1,15 @@
+title: Pillow Changelog
+logs:
+- version: unreleased
+  date: 2020-03-21T18:58:26.033347964Z
+  commit:
+    summary: gitlab-ci clean up
+    added:
+    - CLI
+    changed:
+    - projectDirectory is now packageDirectory
+    - fixturesDirectory is now testFixturesDirectory
+    deprecated: []
+    removed: []
+    fixed: []
+    security: []
