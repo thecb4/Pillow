@@ -1,0 +1,9 @@
+summary: Set up Testing Harness
+added:
+  - Testable protocol
+  - TestableExecutable protocol
+changed: []
+deprecated: []
+removed: []
+fixed: []
+security: []

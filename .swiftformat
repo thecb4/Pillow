@@ -1,0 +1,9 @@
+--indent 2
+--allman false
+--stripunusedargs closure-only
+--empty void
+--indentcase true
+--commas inline
+
+--disable sortedImports,andOperator
+

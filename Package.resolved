@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "XMLCoder",
+        "repositoryURL": "https://github.com/MaxDesiatov/XMLCoder.git",
+        "state": {
+          "branch": "master",
+          "revision": "ae6a0f0112254ca80a7b60b6bd2a40dfe0243643",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

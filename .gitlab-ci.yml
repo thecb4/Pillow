@@ -1,0 +1,77 @@
+# Author: Cavelle Benjamin
+
+variables:
+  DOMAIN: "thecb4.io"
+  EMAIL: "cavelle@thecb4.io"
+
+stages:
+  - build-test
+  - docs
+  # - release
+
+build_and_test:
+  image:
+    name: thecb4/swift-plus:latest
+    entrypoint: [""]
+  stage: build-test
+  script:
+    # - mint install thecb4/swift-doc@master --force
+    # - mint install thecb4/beak@master --force
+    # - mint install realm/SwiftLint --force
+    # - mint install nicklockwood/SwiftFormat --force
+    - swift package update
+    - ./calm.swift continuous-integration
+    # - beak --path workflow.swift run ci
+    # - swift build --build-tests -c debug
+    # - swift test -c debug
+    # - swift build -c release
+  only:
+    - master
+
+# spm_501_bonic:
+#   image:
+#     name: swift:5.0.1-bionic
+#     entrypoint: [""]
+#   stage: build-test
+#   script:
+#     - swift package update
+#     - swift test --generate-linuxmain
+#     - swift build --build-tests -c debug
+#     - swift test -c debug
+#     - swift build -c release
+#   only:
+#     - master
+
+# xcode_501_macOS:
+#   stage: build
+#   script:
+#     - xcodebuild clean -project ProjectName.xcodeproj -scheme SchemeName | xcpretty
+#     - xcodebuild test -project ProjectName.xcodeproj -scheme SchemeName -destination 'platform=iOS Simulator,name=iPhone 6s,OS=9.2' | xcpretty -s
+#   tags:
+#     - ios_9-2
+#     - xcode_7-2
+#     - osx_10-11
+
+pages:
+  image:
+    name: thecb4/swift-plus:latest
+  stage: docs
+  dependencies:
+    - build_and_test
+  script:
+    # - mint install thecb4/swift-doc@master --force
+    # - mint install thecb4/beak@master --force
+    # - mint install realm/SwiftLint --force
+    # - mint install nicklockwood/SwiftFormat --force
+    # - beak --path workflow.swift run docs
+    - ./calm.swift documentation
+    # - swift doc ./Sources --output public/ --type html --module-name blanket --author "Cavelle Benjamin" --author-url https://thecb4.io --twitter-handle _thecb4 --git-repository https://github.com/thecb4/blanket
+    - mkdir public
+    # - mkdir public/Resources
+    - cp docs/index.html public/index.html
+    # - cp Resources/logo.png public/Resources/logo.png
+  artifacts:
+    paths:
+    - public
+  only:
+    - master

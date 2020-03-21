@@ -1,0 +1,37 @@
+reporter: json
+
+opt_in_rules: # some rules are only opt-in
+  - empty_count
+  - redundant_nil_coalescing
+  - switch_case_on_newline
+  - force_unwrapping
+  - conditional_returns_on_newline
+  - closure_spacing
+  - implicitly_unwrapped_optional
+
+included:
+  - Sources
+  - Tests
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - .build
+  - DerivedData
+
+disabled_rules: # rule identifiers to exclude from running
+  - trailing_whitespace
+  - identifier_name
+  - switch_case_alignment
+  - nesting
+
+# line_length: 200
+line_length:
+  warning: 150
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+
+function_body_length:
+  warning: 50
+  error: 75
+
