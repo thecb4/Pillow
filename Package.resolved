@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "swift-argument-parser",
+        "repositoryURL": "https://github.com/apple/swift-argument-parser.git",
+        "state": {
+          "branch": "2d8a9bd",
+          "revision": "2d8a9bd1badfcf33fa96534d8db93c09d7884c72",
+          "version": null
+        }
+      },
+      {
+        "package": "TextTable",
+        "repositoryURL": "https://github.com/cfilipov/TextTable.git",
+        "state": {
+          "branch": "master",
+          "revision": "e03289289155b4e7aa565e32862f9cb42140596a",
+          "version": null
+        }
+      },
+      {
         "package": "XMLCoder",
         "repositoryURL": "https://github.com/MaxDesiatov/XMLCoder.git",
         "state": {

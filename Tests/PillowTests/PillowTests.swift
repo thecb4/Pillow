@@ -11,6 +11,8 @@ class PillowTests: XCTestCase, TestableExecutable {
 
   func testExample() throws {
     // given
+    print(self.packageDirectory)
+    print(self.testFixturesDirectory)
     try configureProcess(arguments: [])
     let expected =
       """
@@ -20,11 +22,28 @@ class PillowTests: XCTestCase, TestableExecutable {
 
     // when
     let data = try execute()
-    guard let outString = String(data: data.0, encoding: .utf8) else { return }
-    guard let errString = String(data: data.1, encoding: .utf8) else { return }
+    guard let outString = String(data: data.0, encoding: .utf8) else { XCTFail(); return }
+    guard let errString = String(data: data.1, encoding: .utf8) else { XCTFail(); return }
 
     // then
     XCTAssertEqual(outString, expected)
     XCTAssertEqual(errString, "")
   }
+
+  // func testNoArguments() throws {
+  //   // given
+  //   try configureProcess(arguments: [])
+  //   let expected =
+  //     """
+  //     """
+  //
+  //   // when
+  //   let data = try execute()
+  //   guard let outString = String(data: data.0, encoding: .utf8) else { XCTFail(); return }
+  //   guard let errString = String(data: data.1, encoding: .utf8) else { XCTFail(); return }
+  //
+  //   // then
+  //   XCTAssertEqual(outString, expected)
+  //   XCTAssertEqual(errString, "")
+  // }
 }

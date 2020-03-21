@@ -24,7 +24,7 @@ extension TestableExecutable {
     process = Process()
     let fooBinary = productsDirectory.appendingPathComponent(Self.executableName)
     process?.executableURL = fooBinary
-    process?.currentDirectoryURL = projectDirectory
+    process?.currentDirectoryURL = packageDirectory
     process?.arguments = arguments
     process?.environment = environment.merging(ProcessInfo.processInfo.environment) { current, _ in current }
   }

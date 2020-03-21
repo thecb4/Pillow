@@ -1,8 +1,11 @@
 summary: gitlab-ci clean up
 
 
-added: []
-changed: []
+added:
+  - CLI
+changed:
+  - projectDirectory is now packageDirectory
+  - fixturesDirectory is now testFixturesDirectory
 deprecated: []
 removed: []
 fixed: []

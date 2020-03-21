@@ -9,8 +9,8 @@ import Foundation
 
 protocol Testable {
   var productsDirectory: URL { get }
-  var fixturesDirectory: URL { get }
-  var projectDirectory: URL { get }
+  var testFixturesDirectory: URL { get }
+  var packageDirectory: URL { get }
 }
 
 extension Testable {
@@ -26,14 +26,14 @@ extension Testable {
     #endif
   }
 
-  var fixturesDirectory: URL {
+  var testFixturesDirectory: URL {
     URL(fileURLWithPath: #file)
       .deletingLastPathComponent()
       .deletingLastPathComponent()
       .appendingPathComponent("fixtures")
   }
 
-  var projectDirectory: URL {
+  var packageDirectory: URL {
     URL(fileURLWithPath: #file)
       .deletingLastPathComponent()
       .deletingLastPathComponent()
