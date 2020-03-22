@@ -14,7 +14,7 @@ logs:
 - version: unreleased
   date: 2020-03-22T19:53:52.509260058Z
   commit:
-    summary: First Ship
+    summary: A summary
     added:
     - TestSuiteResult
     - Update TestCaseResult for failures
