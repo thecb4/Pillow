@@ -173,4 +173,42 @@ final class PillowKitTests: XCTestCase {
     XCTAssertEqual(testResults?.results.count, 1)
     XCTAssertEqual(testResults?.results[0].testCaseResults.count, 2)
   }
+
+  func testTransformer() throws {
+    // given
+    let xml =
+      """
+      <?xml version="1.0" encoding="UTF-8"?>
+      <testsuites>
+      <testsuite name="TestResults" errors="0" tests="2" failures="0" time="0.0">
+      <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresDecode" time="0.0">
+      </testcase>
+      <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresEncode" time="0.0">
+      </testcase>
+      </testsuite>
+      </testsuites>
+      """
+    let tests = try TestResults.parse(xml)
+
+    let expectedTable =
+      """
+      ╒═══════════════════════════════╤═══════════════════════════════════════════╤════════╕
+      │ Test Group                    │ Test                                      │ Status │
+      ╞═══════════════════════════════╪═══════════════════════════════════════════╪════════╡
+      │ PillowKitTests.PillowKitTests │ testCodableTestCaseResultNoFailuresDecode │ Passed │
+      ├───────────────────────────────┼───────────────────────────────────────────┼────────┤
+      │ PillowKitTests.PillowKitTests │ testCodableTestCaseResultNoFailuresEncode │ Passed │
+      ╘═══════════════════════════════╧═══════════════════════════════════════════╧════════╛
+
+      """
+
+    // when
+    // then
+
+    let transformer = Transformer.textTable
+
+    let table = transformer.fancyString(for: tests.results[0].testCaseResults) ?? "no data"
+
+    XCTAssertEqual(table, expectedTable)
+  }
 }

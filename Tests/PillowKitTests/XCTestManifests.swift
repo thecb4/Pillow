@@ -12,7 +12,8 @@
       ("testCodableTestCaseResultNoFailuresEncode", testCodableTestCaseResultNoFailuresEncode),
       ("testCodableTestResultsNoFailuresDecode", testCodableTestResultsNoFailuresDecode),
       ("testCodableTestResultsNoFailuresEncode", testCodableTestResultsNoFailuresEncode),
-      ("testCodableTestSuiteResultNoFailuresDecode", testCodableTestSuiteResultNoFailuresDecode)
+      ("testCodableTestSuiteResultNoFailuresDecode", testCodableTestSuiteResultNoFailuresDecode),
+      ("testTransformer", testTransformer)
     ]
   }
 

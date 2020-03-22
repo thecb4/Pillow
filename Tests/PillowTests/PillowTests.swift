@@ -15,9 +15,14 @@ class PillowTests: XCTestCase, TestableExecutable {
     try configureProcess(arguments: [], environment: ["CWD": testFixturesDirectory.string], cwd: testFixturesDirectory.url)
     let expected =
       """
-      TestResults(results: [PillowKit.TestSuiteResult(name: "TestResults", errors: "0", tests: "2", failures: "0", time: "0.0", testCaseResults: [PillowKit.TestCaseResult(classname: "PillowCLITests.CLITests", name: "testCLIParse", time: "0.0", value: "", failure: nil), PillowKit.TestCaseResult(classname: "PillowTests.PillowTests", name: "testNoArguments", time: "0.0", value: "", failure: nil)])])
-
-      """
+      ╒═════════════════════════╤═════════════════╤════════╕
+      │ Test Group              │ Test            │ Status │
+      ╞═════════════════════════╪═════════════════╪════════╡
+      │ PillowCLITests.CLITests │ testCLIParse    │ Passed │
+      ├─────────────────────────┼─────────────────┼────────┤
+      │ PillowTests.PillowTests │ testNoArguments │ Passed │
+      ╘═════════════════════════╧═════════════════╧════════╛
+      """ + .executableEnding
 
     // when
     let data = try execute()

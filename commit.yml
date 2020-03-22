@@ -1,8 +1,8 @@
-summary: PillowKit inregration
+summary: TextTable integration
 
 
 added:
-  - PillowKit to PillowCLI to execute decoding
+  - Transform for Test results to table
 changed:
 deprecated: []
 removed: []

@@ -127,3 +127,11 @@ extension TestResults {
     return results
   }
 }
+
+extension TestResults {
+  public var table: String {
+    let transformer = Transformer.textTable
+
+    return transformer.fancyString(for: results[0].testCaseResults) ?? "no data"
+  }
+}

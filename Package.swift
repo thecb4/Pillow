@@ -15,7 +15,7 @@ let package = Package(
     // Dependencies declare other packages that this package depends on.
     // .package(url: /* package url */, from: "1.0.0"),
     .package(url: "https://github.com/MaxDesiatov/XMLCoder.git", .branch("master")),
-    // .package(url: "https://github.com/cfilipov/TextTable.git", .branch("master")),
+    .package(url: "https://github.com/cfilipov/TextTable.git", .branch("master")),
     .package(url: "https://github.com/apple/swift-argument-parser.git", .branch("2d8a9bd")),
     .package(url: "https://github.com/mxcl/Path.swift.git", .exact("1.0.0"))
   ],
@@ -32,7 +32,7 @@ let package = Package(
     ),
     .target(
       name: "PillowKit",
-      dependencies: ["XMLCoder"]
+      dependencies: ["XMLCoder", "TextTable"]
     ),
     .target(
       name: "TestHelpers",

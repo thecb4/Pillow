@@ -23,9 +23,9 @@ public struct CLI: ParsableCommand {
   public func run() throws {
     guard let string = try? String(contentsOf: testResults) else { throw CLIError.invalidFile(testResults) }
 
-    let results = try TestResults.parse(string)
+    let tests = try TestResults.parse(string)
 
-    print(results)
+    print(tests.table)
   }
 }
 
