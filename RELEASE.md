@@ -1,5 +1,6 @@
 #### [0.1.0] - 2020-Mar-22.
 ##### Added
+- TextTable transform for test results
 - TestSuiteResult
 - Update TestCaseResult for failures
 - default file for Test Results

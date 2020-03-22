@@ -161,7 +161,8 @@ extension Calm.Release {
       try Shell.changelogger(arguments: ["release", "\"\(summary)\"", "--version-tag", version.description], environment: env)
       try Shell.changelogger(arguments: ["markdown"])
 
-      try Calm.Save.run()
+      try Shell.git(arguments: ["add", "-A"])
+      try Shell.git(arguments: ["commit", "-F", "commit.yml"])
     }
   }
 

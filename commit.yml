@@ -1,9 +1,10 @@
-summary: TextTable Integration
+summary: Update Readme
 
 
 added:
-  - TextTable transform for test results
-changed: []
+  - Pillow logo from icons8
+changed:
+  - Updated README
 deprecated: []
 removed: []
 fixed: []

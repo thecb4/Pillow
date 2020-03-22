@@ -1,21 +1,23 @@
 title: Pillow Changelog
 logs:
 - version: unreleased
-  date: 2020-03-22T19:58:13.405985951Z
+  date: 2020-03-22T20:20:52.247405052Z
   commit:
-    summary: TextTable Integration
+    summary: Update Readme
     added:
-    - TextTable transform for test results
-    changed: []
+    - Pillow logo from icons8
+    changed:
+    - Updated README
     deprecated: []
     removed: []
     fixed: []
     security: []
-- version: unreleased
-  date: 2020-03-22T19:53:52.509260058Z
+- version: 0.1.0
+  date: 2020-03-22T20:00:30.005406022Z
   commit:
-    summary: A summary
+    summary: First Ship
     added:
+    - TextTable transform for test results
     - TestSuiteResult
     - Update TestCaseResult for failures
     - default file for Test Results
