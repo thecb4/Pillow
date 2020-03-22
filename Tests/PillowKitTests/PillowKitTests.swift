@@ -118,4 +118,59 @@ final class PillowKitTests: XCTestCase {
     XCTAssertEqual(testSuiteResult?.time, "0.0")
     XCTAssertEqual(testSuiteResult?.testCaseResults.count, 2)
   }
+
+  func testCodableTestResultsNoFailuresDecode() {
+    // given
+    let xml =
+      """
+      <?xml version="1.0" encoding="UTF-8"?>
+      <testsuites>
+      <testsuite name="TestResults" errors="0" tests="2" failures="0" time="0.0">
+      <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresDecode" time="0.0">
+      </testcase>
+      <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresEncode" time="0.0">
+      </testcase>
+      </testsuite>
+      </testsuites>
+      """
+
+    // when
+    guard let data = xml.data(using: .utf8) else { XCTFail(); return }
+
+    let testResults = try? XMLDecoder().decode(TestResults.self, from: data)
+
+    XCTAssertNotNil(testResults)
+    // XCTAssertEqual(testSuiteResult?.name, "TestResults")
+    // XCTAssertEqual(testSuiteResult?.errors, "0")
+    // XCTAssertEqual(testSuiteResult?.tests, "2")
+    // XCTAssertEqual(testSuiteResult?.failures, "0")
+    // XCTAssertEqual(testSuiteResult?.time, "0.0")
+    XCTAssertEqual(testResults?.results.count, 1)
+    XCTAssertEqual(testResults?.results[0].testCaseResults.count, 2)
+  }
+
+  func testCodableTestResultsNoFailuresEncode() {
+    // given
+    let xml =
+      """
+      <?xml version="1.0" encoding="UTF-8"?>
+      <testsuites>
+      <testsuite name="TestResults" errors="0" tests="2" failures="0" time="0.0">
+      <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresDecode" time="0.0">
+      </testcase>
+      <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresEncode" time="0.0">
+      </testcase>
+      </testsuite>
+      </testsuites>
+      """
+
+    // when
+    guard let data = xml.data(using: .utf8) else { XCTFail(); return }
+
+    let testResults = try? XMLDecoder().decode(TestResults.self, from: data)
+
+    XCTAssertNotNil(testResults)
+    XCTAssertEqual(testResults?.results.count, 1)
+    XCTAssertEqual(testResults?.results[0].testCaseResults.count, 2)
+  }
 }

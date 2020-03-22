@@ -10,6 +10,8 @@
       ("testCodableTestCaseResultFailuresEncode", testCodableTestCaseResultFailuresEncode),
       ("testCodableTestCaseResultNoFailuresDecode", testCodableTestCaseResultNoFailuresDecode),
       ("testCodableTestCaseResultNoFailuresEncode", testCodableTestCaseResultNoFailuresEncode),
+      ("testCodableTestResultsNoFailuresDecode", testCodableTestResultsNoFailuresDecode),
+      ("testCodableTestResultsNoFailuresEncode", testCodableTestResultsNoFailuresEncode),
       ("testCodableTestSuiteResultNoFailuresDecode", testCodableTestSuiteResultNoFailuresDecode)
     ]
   }

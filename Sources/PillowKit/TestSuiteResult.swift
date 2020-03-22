@@ -5,6 +5,25 @@
 
 import XMLCoder
 
+public struct TestResults: Codable, DynamicNodeEncoding {
+  public let results: [TestSuiteResult]
+
+  public init(results: [TestSuiteResult]) {
+    self.results = results
+  }
+
+  enum CodingKeys: String, CodingKey {
+    case results = "testsuite"
+  }
+
+  public static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+    switch key {
+      default:
+        return .element
+    }
+  }
+}
+
 public struct TestSuiteResult: Codable, DynamicNodeEncoding {
   public let name: String
   public let errors: String

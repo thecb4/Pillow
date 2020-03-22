@@ -1,10 +1,9 @@
-summary: TestSuiteResult
+summary: TestResults
 
 
 added:
-  - TestSuiteResult
+  - TestResults
 changed:
-  - PillowKitTests to have more complete asserts per model
 deprecated: []
 removed: []
 fixed: []
