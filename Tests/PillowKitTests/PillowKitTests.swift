@@ -30,7 +30,8 @@ final class PillowKitTests: XCTestCase {
       classname: "PillowKitTests.PillowKitTests",
       name: "testCodableTestCaseResultNoFailures",
       time: "0.0",
-      value: ""
+      value: "",
+      failure: nil
     )
 
     let expectedXML =
@@ -43,5 +44,22 @@ final class PillowKitTests: XCTestCase {
     guard let actualXML = String(data: data, encoding: .utf8) else { XCTFail(); return }
 
     XCTAssertEqual(actualXML, expectedXML)
+  }
+
+  func testCodableTestCaseResultFailuresDecode() {
+    // given
+    let xml =
+      """
+      <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultFealuresDecode" time="0.0">
+      <failure message="failed"></failure>
+      </testcase>
+      """
+
+    // when
+    guard let data = xml.data(using: .utf8) else { XCTFail(); return }
+
+    let testCaseResult = try? XMLDecoder().decode(TestCaseResult.self, from: data)
+
+    XCTAssertNotNil(testCaseResult)
   }
 }

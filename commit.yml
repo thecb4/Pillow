@@ -1,10 +1,8 @@
-summary: gitlab-ci clean up
+summary: TestCaseResults
 
 
 added:
-  - default file for Test Results
-  - check for xcode usage to pass with xcode and swift test
-  - Encode/Decode TestCaseResult
+  - Update TestCaseResult for failures
 changed: []
 deprecated: []
 removed: []

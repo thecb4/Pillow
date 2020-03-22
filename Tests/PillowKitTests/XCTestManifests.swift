@@ -6,6 +6,7 @@
     //   `swift test --generate-linuxmain`
     // to regenerate.
     static let __allTests__PillowKitTests = [
+      ("testCodableTestCaseResultFailuresDecode", testCodableTestCaseResultFailuresDecode),
       ("testCodableTestCaseResultNoFailuresDecode", testCodableTestCaseResultNoFailuresDecode),
       ("testCodableTestCaseResultNoFailuresEncode", testCodableTestCaseResultNoFailuresEncode)
     ]

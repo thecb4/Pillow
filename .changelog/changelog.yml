@@ -1,6 +1,17 @@
 title: Pillow Changelog
 logs:
 - version: unreleased
+  date: 2020-03-22T03:34:45.754997968Z
+  commit:
+    summary: TestCaseResults
+    added:
+    - Update TestCaseResult for failures
+    changed: []
+    deprecated: []
+    removed: []
+    fixed: []
+    security: []
+- version: unreleased
   date: 2020-03-22T03:19:28.329354047Z
   commit:
     summary: gitlab-ci clean up
