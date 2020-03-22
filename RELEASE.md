@@ -1,17 +1,9 @@
-#### [0.1.0] - 2020-Mar-22.
+#### [0.1.1] - 2020-Mar-22.
 ##### Added
-- TextTable transform for test results
-- TestSuiteResult
-- Update TestCaseResult for failures
-- default file for Test Results
-- check for xcode usage to pass with xcode and swift test
-- Encode/Decode TestCaseResult
-- CLI
+- Pillow logo from icons8
 
 ##### Changed
-- PillowKitTests to have more complete asserts per model
-- projectDirectory is now packageDirectory
-- fixturesDirectory is now testFixturesDirectory
+- Updated README
 
 ##### Deprecated
 -
