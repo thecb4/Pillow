@@ -1,9 +1,9 @@
-summary: TextTable integration
+summary: TextTable Integration
 
 
 added:
-  - Transform for Test results to table
-changed:
+  - TextTable transform for test results
+changed: []
 deprecated: []
 removed: []
 fixed: []

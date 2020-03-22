@@ -1,48 +1,29 @@
 title: Pillow Changelog
 logs:
 - version: unreleased
-  date: 2020-03-22T04:05:28.072258949Z
+  date: 2020-03-22T19:58:13.405985951Z
   commit:
-    summary: TestSuiteResult
+    summary: TextTable Integration
     added:
-    - TestSuiteResult
-    changed:
-    - PillowKitTests to have more complete asserts per model
-    deprecated: []
-    removed: []
-    fixed: []
-    security: []
-- version: unreleased
-  date: 2020-03-22T03:34:45.754997968Z
-  commit:
-    summary: TestCaseResults
-    added:
-    - Update TestCaseResult for failures
+    - TextTable transform for test results
     changed: []
     deprecated: []
     removed: []
     fixed: []
     security: []
 - version: unreleased
-  date: 2020-03-22T03:19:28.329354047Z
+  date: 2020-03-22T19:53:52.509260058Z
   commit:
-    summary: gitlab-ci clean up
+    summary: First Ship
     added:
+    - TestSuiteResult
+    - Update TestCaseResult for failures
     - default file for Test Results
     - check for xcode usage to pass with xcode and swift test
     - Encode/Decode TestCaseResult
-    changed: []
-    deprecated: []
-    removed: []
-    fixed: []
-    security: []
-- version: unreleased
-  date: 2020-03-21T18:58:26.033347964Z
-  commit:
-    summary: gitlab-ci clean up
-    added:
     - CLI
     changed:
+    - PillowKitTests to have more complete asserts per model
     - projectDirectory is now packageDirectory
     - fixturesDirectory is now testFixturesDirectory
     deprecated: []
