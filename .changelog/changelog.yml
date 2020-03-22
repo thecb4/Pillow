@@ -1,6 +1,18 @@
 title: Pillow Changelog
 logs:
 - version: unreleased
+  date: 2020-03-22T04:05:28.072258949Z
+  commit:
+    summary: TestSuiteResult
+    added:
+    - TestSuiteResult
+    changed:
+    - PillowKitTests to have more complete asserts per model
+    deprecated: []
+    removed: []
+    fixed: []
+    security: []
+- version: unreleased
   date: 2020-03-22T03:34:45.754997968Z
   commit:
     summary: TestCaseResults

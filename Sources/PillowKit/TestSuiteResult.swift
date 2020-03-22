@@ -5,6 +5,43 @@
 
 import XMLCoder
 
+public struct TestSuiteResult: Codable, DynamicNodeEncoding {
+  public let name: String
+  public let errors: String
+  public let tests: String
+  public let failures: String
+  public let time: String
+
+  public let testCaseResults: [TestCaseResult]
+
+  public init(name: String, errors: String, tests: String, failures: String, time: String, testCaseResults: [TestCaseResult]) {
+    self.name = name
+    self.errors = errors
+    self.tests = tests
+    self.failures = failures
+    self.time = time
+    self.testCaseResults = testCaseResults
+  }
+
+  enum CodingKeys: String, CodingKey {
+    case name
+    case errors
+    case tests
+    case failures
+    case time
+    case testCaseResults = "testcase"
+  }
+
+  public static func nodeEncoding(for key: CodingKey) -> XMLEncoder.NodeEncoding {
+    switch key {
+      case CodingKeys.name, CodingKeys.errors, CodingKeys.tests, CodingKeys.failures, CodingKeys.time:
+        return .attribute
+      default:
+        return .element
+    }
+  }
+}
+
 public struct TestCaseResult: Codable, DynamicNodeEncoding {
   public let classname: String
   public let name: String

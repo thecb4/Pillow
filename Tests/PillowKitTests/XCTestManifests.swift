@@ -7,8 +7,10 @@
     // to regenerate.
     static let __allTests__PillowKitTests = [
       ("testCodableTestCaseResultFailuresDecode", testCodableTestCaseResultFailuresDecode),
+      ("testCodableTestCaseResultFailuresEncode", testCodableTestCaseResultFailuresEncode),
       ("testCodableTestCaseResultNoFailuresDecode", testCodableTestCaseResultNoFailuresDecode),
-      ("testCodableTestCaseResultNoFailuresEncode", testCodableTestCaseResultNoFailuresEncode)
+      ("testCodableTestCaseResultNoFailuresEncode", testCodableTestCaseResultNoFailuresEncode),
+      ("testCodableTestSuiteResultNoFailuresDecode", testCodableTestSuiteResultNoFailuresDecode)
     ]
   }
 

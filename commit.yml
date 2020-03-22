@@ -1,9 +1,10 @@
-summary: TestCaseResults
+summary: TestSuiteResult
 
 
 added:
-  - Update TestCaseResult for failures
-changed: []
+  - TestSuiteResult
+changed:
+  - PillowKitTests to have more complete asserts per model
 deprecated: []
 removed: []
 fixed: []

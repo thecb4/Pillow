@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-<testsuite name="TestResults" errors="0" tests="5" failures="0" time="0.0">
+<testsuite name="TestResults" errors="0" tests="7" failures="0" time="0.0">
 <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresDecode" time="0.0">
 </testcase>
-<testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresEncode" time="0.0">
+<testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultFailuresEncode" time="0.0">
+</testcase>
+<testcase classname="PillowCLITests.CLITests" name="testCLIParse" time="0.0">
 </testcase>
 <testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultFailuresDecode" time="0.0">
 </testcase>
-<testcase classname="PillowCLITests.CLITests" name="testCLIParse" time="0.0">
+<testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestCaseResultNoFailuresEncode" time="0.0">
+</testcase>
+<testcase classname="PillowKitTests.PillowKitTests" name="testCodableTestSuiteResultNoFailuresDecode" time="0.0">
 </testcase>
 <testcase classname="PillowTests.PillowTests" name="testNoArguments" time="0.0">
 </testcase>
