@@ -2,10 +2,10 @@ summary: gitlab-ci clean up
 
 
 added:
-  - CLI
-changed:
-  - projectDirectory is now packageDirectory
-  - fixturesDirectory is now testFixturesDirectory
+  - default file for Test Results
+  - check for xcode usage to pass with xcode and swift test
+  - Encode/Decode TestCaseResult
+changed: []
 deprecated: []
 removed: []
 fixed: []

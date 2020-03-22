@@ -8,28 +8,28 @@
 import Foundation
 
 @available(macOS 10.13, *)
-protocol TestableExecutable: AnyObject, Testable {
+public protocol TestableExecutable: AnyObject, Testable {
   static var queue: DispatchQueue { get }
   static var executableName: String { get }
   var process: Process? { get set }
   var launched: Bool { get set }
-  func configureProcess(arguments: [String], environment: [String: String]) throws
+  func configureProcess(arguments: [String], environment: [String: String], cwd: URL) throws
   func execute(capturingOutput: Bool) throws -> (Data, Data)
   func terminate()
 }
 
 @available(macOS 10.13, *)
 extension TestableExecutable {
-  func configureProcess(arguments: [String], environment: [String: String] = [:]) throws {
+  public func configureProcess(arguments: [String], environment: [String: String] = [:], cwd: URL) throws {
     process = Process()
-    let fooBinary = productsDirectory.appendingPathComponent(Self.executableName)
+    let fooBinary = productsDirectory.url.appendingPathComponent(Self.executableName)
     process?.executableURL = fooBinary
-    process?.currentDirectoryURL = packageDirectory
+    process?.currentDirectoryURL = cwd
     process?.arguments = arguments
     process?.environment = environment.merging(ProcessInfo.processInfo.environment) { current, _ in current }
   }
 
-  func execute(capturingOutput: Bool = true) throws -> (Data, Data) {
+  public func execute(capturingOutput: Bool = true) throws -> (Data, Data) {
     let out = Pipe()
     var outData = Data()
 
@@ -53,7 +53,7 @@ extension TestableExecutable {
     return (outData, errData)
   }
 
-  func terminate() {
+  public func terminate() {
     Self.queue.sync {
       if launched {
         process?.terminate()
@@ -63,13 +63,13 @@ extension TestableExecutable {
 }
 
 extension UInt8 {
-  var character: Character {
+  public var character: Character {
     Character(UnicodeScalar(self))
   }
 }
 
 extension String {
-  static var executableEnding: String {
+  public static var executableEnding: String {
     let ending: [UInt8] = [10, 10]
     return String(ending.map { $0.character })
   }

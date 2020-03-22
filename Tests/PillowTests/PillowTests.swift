@@ -1,5 +1,6 @@
 import XCTest
 import class Foundation.Bundle
+import TestHelpers
 
 @available(macOS 10.13, *)
 class PillowTests: XCTestCase, TestableExecutable {
@@ -9,11 +10,9 @@ class PillowTests: XCTestCase, TestableExecutable {
   var process: Process?
   var launched: Bool = false
 
-  func testExample() throws {
+  func testNoArguments() throws {
     // given
-    print(self.packageDirectory)
-    print(self.testFixturesDirectory)
-    try configureProcess(arguments: [])
+    try configureProcess(arguments: [], cwd: testFixturesDirectory.url)
     let expected =
       """
       Hello, world!
@@ -29,21 +28,4 @@ class PillowTests: XCTestCase, TestableExecutable {
     XCTAssertEqual(outString, expected)
     XCTAssertEqual(errString, "")
   }
-
-  // func testNoArguments() throws {
-  //   // given
-  //   try configureProcess(arguments: [])
-  //   let expected =
-  //     """
-  //     """
-  //
-  //   // when
-  //   let data = try execute()
-  //   guard let outString = String(data: data.0, encoding: .utf8) else { XCTFail(); return }
-  //   guard let errString = String(data: data.1, encoding: .utf8) else { XCTFail(); return }
-  //
-  //   // then
-  //   XCTAssertEqual(outString, expected)
-  //   XCTAssertEqual(errString, "")
-  // }
 }
