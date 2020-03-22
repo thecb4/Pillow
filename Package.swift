@@ -28,7 +28,7 @@ let package = Package(
     ),
     .target(
       name: "PillowCLI",
-      dependencies: ["ArgumentParser", "Path"]
+      dependencies: ["ArgumentParser", "Path", "PillowKit"]
     ),
     .target(
       name: "PillowKit",

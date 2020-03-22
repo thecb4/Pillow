@@ -1,8 +1,8 @@
-summary: TestResults
+summary: PillowKit inregration
 
 
 added:
-  - TestResults
+  - PillowKit to PillowCLI to execute decoding
 changed:
 deprecated: []
 removed: []

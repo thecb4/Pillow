@@ -117,3 +117,13 @@ public struct FailureResult: Codable, DynamicNodeEncoding {
     }
   }
 }
+
+extension TestResults {
+  public static func parse(_ string: String) throws -> TestResults {
+    guard let data = string.data(using: .utf8) else { throw CodableError.stringToDataError(string) }
+
+    guard let results = try? XMLDecoder().decode(TestResults.self, from: data) else { throw CodableError.decodeError(string) }
+
+    return results
+  }
+}

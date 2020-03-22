@@ -5,6 +5,7 @@
 import Foundation
 import Path
 import ArgumentParser
+import PillowKit
 
 public struct CLI: ParsableCommand {
   public static var configuration = CommandConfiguration(
@@ -20,7 +21,11 @@ public struct CLI: ParsableCommand {
   public init() {}
 
   public func run() throws {
-    print("Hello, world!")
+    guard let string = try? String(contentsOf: testResults) else { throw CLIError.invalidFile(testResults) }
+
+    let results = try TestResults.parse(string)
+
+    print(results)
   }
 }
 
@@ -31,6 +36,9 @@ extension CLI {
 
   static var cwd: Path {
     if xcode {
+      if let _cwd = ProcessInfo.processInfo.environment["CWD"], let path = Path(_cwd) {
+        return path
+      }
       let path = Path(url: URL(fileURLWithPath: #file))!
       return path.parent.parent.parent
     }

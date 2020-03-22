@@ -12,10 +12,10 @@ class PillowTests: XCTestCase, TestableExecutable {
 
   func testNoArguments() throws {
     // given
-    try configureProcess(arguments: [], cwd: testFixturesDirectory.url)
+    try configureProcess(arguments: [], environment: ["CWD": testFixturesDirectory.string], cwd: testFixturesDirectory.url)
     let expected =
       """
-      Hello, world!
+      TestResults(results: [PillowKit.TestSuiteResult(name: "TestResults", errors: "0", tests: "2", failures: "0", time: "0.0", testCaseResults: [PillowKit.TestCaseResult(classname: "PillowCLITests.CLITests", name: "testCLIParse", time: "0.0", value: "", failure: nil), PillowKit.TestCaseResult(classname: "PillowTests.PillowTests", name: "testNoArguments", time: "0.0", value: "", failure: nil)])])
 
       """
 
